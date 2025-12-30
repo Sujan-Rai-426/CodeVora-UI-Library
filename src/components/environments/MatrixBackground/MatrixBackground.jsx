@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./HackerThemeBG.css";
+import "./MatrixBackground.css";
 
-const HackerThemeBG = ({ children }) => {
+const MatrixBackground = ({ children }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const containerRef = useRef(null);
     const canvasRef = useRef(null);
@@ -18,7 +18,7 @@ const HackerThemeBG = ({ children }) => {
         window.addEventListener("resize", resizeCanvas);
 
         // Katakana + Binary for more "Hacker" feel
-        const charStr = "01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ";
+        const charStr = "01ｱ1ｳｴ0ｶｷｹｺｻ11ｽｾ0ﾀﾁﾂ1ﾄﾅﾆ01ﾈﾉﾊﾋﾌﾍ1ﾏﾐ00ﾒﾓﾔﾕ10ﾗﾘﾙ1ﾛﾜﾝ";
         const characters = charStr.split("");
         const fontSize = 14;
         const columns = canvas.width / fontSize;
@@ -70,21 +70,21 @@ const HackerThemeBG = ({ children }) => {
     };
 
     return (
-        <div className="ib-hacker-grid-container" ref={containerRef} onMouseMove={handleMouseMove}>
-            <canvas ref={canvasRef} className="ib-matrix-canvas" />
-            <div className="ib-vignette" />
+        <div className="cv-hacker-grid-container" ref={containerRef} onMouseMove={handleMouseMove}>
+            <canvas ref={canvasRef} className="cv-matrix-canvas" />
+            <div className="cv-vignette" />
             
-            <div className="ib-grid-overlay" style={{ "--mouse-x": `${mousePos.x}px`, "--mouse-y": `${mousePos.y}px` }}>
-                <div className="ib-grid-glow" />
+            <div className="cv-grid-overlay" style={{ "--mouse-x": `${mousePos.x}px`, "--mouse-y": `${mousePos.y}px` }}>
+                <div className="cv-grid-glow" />
             </div>
 
-            <div className="ib-main-content-wrapper">
+            <div className="cv-main-content-wrapper">
                 {children}
             </div>
 
-            <div className="ib-scanline" />
+            <div className="cv-scanline" />
         </div>
     );
 };
 
-export { HackerThemeBG };
+export { MatrixBackground };

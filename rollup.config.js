@@ -22,11 +22,14 @@ export default {
             inject: true,   // This ensures CSS is bundled into the JS file
             minimize: true
         }),
-        resolve(),
+        resolve({
+            extensions: ['.js', '.jsx', '.ts', '.tsx']
+        }),
         babel({
             babelHelpers: 'bundled',
             exclude: 'node_modules/**',
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx']
         }),
         commonjs()
     ],

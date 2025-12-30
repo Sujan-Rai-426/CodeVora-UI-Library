@@ -5,12 +5,18 @@
   "description": "High-performance theme based UI components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "prepare": "npm run build"
+    "build:js": "rollup -c",
+    "build:types": "rollup -c rollup.dts.config.js",
+    "build": "npm run build:js && npm run build:types",
+    "watch": "rollup -c -w",
+    "preversion": "npm run build",
+    "version": "git add -A dist",
+    "postversion": "git push && git push --tags && npm publish --access public"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
@@ -25,6 +31,8 @@
     "@rollup/plugin-node-resolve": "^15.3.1",
     "postcss": "^8.5.6",
     "rollup": "^3.29.5",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-dts": "^6.3.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,4 +1,5 @@
+// Barrel index.js ----> Main index.js
 
 
-// Backgrounds
-export * from './components/background/hacker_theme/HackerThemeBG.jsx';
+// src/index.js
+export * from './components/environments';
