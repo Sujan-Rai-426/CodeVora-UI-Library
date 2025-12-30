@@ -1,6 +1,6 @@
 {
   "name": "codevora-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "High-performance theme based UI components",
   "main": "dist/index.js",
