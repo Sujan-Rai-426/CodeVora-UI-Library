@@ -56,36 +56,32 @@ MIT © [Sujan Rai](https://github.com/Sujan-Rai-426)
 
 ## Folder Structure [Demo]
 
+```text
 codevora-ui/
-    ├── index.t.ds
-    |
-    ├── src/
-    |   ├── index.js
-    |   |
-    |   ├── components/
-    |   |       ├── core/ # Reusable UI components using preset
-        |       │       ├── Button/
-        ├──..   |       |      ├── Button.css
-                |       |      ├── Button.jsx
-                |       |      ├── preset.css
-                |       |      ├── Button.d.ts
-                |       |
-                |       ├──.....
-                |       |     
-                │       ├── index.js
-                │       └── index.d.ts
-                │
-                │
-                ├── environments/ #with complete environemnt and dont use preset
-                │       ├── HackerBackground/
-                │       │       ├── HackerBackground.jsx
-                │       │       ├── HackerBackground.css
-                │       │       └── index.js
-                |       |
-                │       ├── CyberpunkBackground/
-                │       │       └── .....
-                │       |
-                |       ├──index.js
-                |       └── index.d.ts
-                |
-                └── index.js
+  ├── index.d.ts
+  │
+  ├── src/
+  │     ├── index.js
+  │     │
+  │     ├── components/
+  │     │       ├── core/
+  │     │       │       ├── Button/
+  │     │       │       │       ├── Button.jsx
+  │     │       │       │       ├── Button.css
+  │     │       │       │       ├── preset.css
+  │     │       │       │       └── Button.d.ts
+  │     │       │       ├── index.js
+  │     │       │       └── index.d.ts
+  │     │       │
+  │     │       ├── environments/
+  │     │       │       ├── HackerBackground/
+  │     │       │       │       ├── HackerBackground.jsx
+  │     │       │       │       ├── HackerBackground.css
+  │     │       │       │       └── index.js
+  │     │       │       ├── CyberpunkBackground/
+  │     │       │       │       └── ...
+  │     │       │       ├── index.js
+  │     │       │       └── index.d.ts
+  │     │       │
+  │     │       └── index.js
+```
