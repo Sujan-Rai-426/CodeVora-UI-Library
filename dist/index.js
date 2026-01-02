@@ -152,7 +152,7 @@ var StarfieldBackground = function StarfieldBackground(_ref) {
     _ref$starCount = _ref.starCount,
     starCount = _ref$starCount === void 0 ? 150 : _ref$starCount,
     _ref$speed = _ref.speed,
-    speed = _ref$speed === void 0 ? 0.5 : _ref$speed;
+    speed = _ref$speed === void 0 ? 0.1 : _ref$speed;
   var canvasRef = React.useRef(null);
   var wrapperRef = React.useRef(null); // 1. Add a ref for the wrapper
   var mouseRef = React.useRef({
