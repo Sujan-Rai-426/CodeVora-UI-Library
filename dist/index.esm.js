@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -50,7 +50,7 @@ var CyberpunkBackground = function CyberpunkBackground(_ref) {
   }, children));
 };
 
-var css_248z$5 = ".MessyBackground-module_wrapper__LZk-h{background:linear-gradient(40deg,#08001f,#001932);margin:0;min-height:100%;overflow:hidden;padding:0;position:relative;width:100%}.MessyBackground-module_svgFilters__0uaA3{height:0;pointer-events:none;position:absolute;user-select:none;width:0}.MessyBackground-module_gradientsContainer__B8bIX{filter:url(#goo) blur(70px);height:100%;left:0;position:absolute;top:0;width:100%}.MessyBackground-module_g1__O3-OK,.MessyBackground-module_g2__dldE0,.MessyBackground-module_g3__EqhFt,.MessyBackground-module_g4__3ICs1,.MessyBackground-module_g5__UN1Cz{border-radius:50%;height:80%;left:10%;mix-blend-mode:hard-light;opacity:.8;position:absolute;top:10%;width:80%}.MessyBackground-module_g1__O3-OK{animation:MessyBackground-module_moveVertical__uDc9- 30s ease infinite;background:radial-gradient(circle at center,rgba(18,113,255,.8) 0,rgba(18,113,255,0) 50%) no-repeat}.MessyBackground-module_g2__dldE0{animation:MessyBackground-module_moveInCircle__N-XZr 20s infinite reverse;background:radial-gradient(circle at center,rgba(221,74,255,.8) 0,rgba(221,74,255,0) 50%) no-repeat}.MessyBackground-module_g3__EqhFt{animation:MessyBackground-module_moveInCircle__N-XZr 40s linear infinite;background:radial-gradient(circle at center,rgba(100,220,255,.8) 0,rgba(100,220,255,0) 50%) no-repeat}.MessyBackground-module_g4__3ICs1{animation:MessyBackground-module_moveHorizontal__lcOai 25s ease infinite;background:radial-gradient(circle at center,rgba(200,50,50,.8) 0,rgba(200,50,50,0) 50%) no-repeat}.MessyBackground-module_g5__UN1Cz{animation:MessyBackground-module_moveInCircle__N-XZr 20s ease infinite;background:radial-gradient(circle at center,rgba(180,180,50,.8) 0,rgba(180,180,50,0) 50%) no-repeat}.MessyBackground-module_content__wnMmJ{min-height:100vh;position:relative;width:100%;z-index:10}@keyframes MessyBackground-module_moveInCircle__N-XZr{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes MessyBackground-module_moveVertical__uDc9-{0%{transform:translateY(-50%)}50%{transform:translateY(50%)}to{transform:translateY(-50%)}}@keyframes MessyBackground-module_moveHorizontal__lcOai{0%{transform:translateX(-50%) translateY(-10%)}50%{transform:translateX(50%) translateY(10%)}to{transform:translateX(-50%) translateY(-10%)}}";
+var css_248z$5 = ".MessyBackground-module_wrapper__LZk-h{background:linear-gradient(40deg,#08001f,#001932);margin:0;min-height:100%;overflow:hidden;padding:0;position:relative;width:100%}.MessyBackground-module_svgFilters__0uaA3{height:0;pointer-events:none;position:absolute;user-select:none;width:0}.MessyBackground-module_gradientsContainer__B8bIX{filter:url(#goo) blur(70px);height:100%;left:0;position:absolute;top:0;width:100%}.MessyBackground-module_g1__O3-OK,.MessyBackground-module_g2__dldE0,.MessyBackground-module_g3__EqhFt,.MessyBackground-module_g4__3ICs1,.MessyBackground-module_g5__UN1Cz{border-radius:50%;height:80%;left:10%;mix-blend-mode:hard-light;opacity:.8;position:absolute;top:10%;width:80%}.MessyBackground-module_g1__O3-OK{animation:MessyBackground-module_moveVertical__uDc9- 30s ease infinite;background:radial-gradient(circle at center,rgba(18,113,255,.8) 0,rgba(18,113,255,0) 50%) no-repeat}.MessyBackground-module_g2__dldE0{animation:MessyBackground-module_moveInCircle__N-XZr 20s infinite reverse;background:radial-gradient(circle at center,rgba(221,74,255,.8) 0,rgba(221,74,255,0) 50%) no-repeat}.MessyBackground-module_g3__EqhFt{animation:MessyBackground-module_moveInCircle__N-XZr 40s linear infinite;background:radial-gradient(circle at center,rgba(100,220,255,.8) 0,rgba(100,220,255,0) 50%) no-repeat}.MessyBackground-module_g4__3ICs1{animation:MessyBackground-module_moveHorizontal__lcOai 25s ease infinite;background:radial-gradient(circle at center,rgba(200,50,50,.8) 0,rgba(200,50,50,0) 50%) no-repeat}.MessyBackground-module_g5__UN1Cz{animation:MessyBackground-module_moveInCircle__N-XZr 20s ease infinite;background:radial-gradient(circle at center,rgba(180,180,50,.8) 0,rgba(180,180,50,0) 50%) no-repeat}.MessyBackground-module_content__wnMmJ{min-height:100%;position:relative;width:100%;z-index:10}@keyframes MessyBackground-module_moveInCircle__N-XZr{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}to{transform:rotate(1turn)}}@keyframes MessyBackground-module_moveVertical__uDc9-{0%{transform:translateY(-50%)}50%{transform:translateY(50%)}to{transform:translateY(-50%)}}@keyframes MessyBackground-module_moveHorizontal__lcOai{0%{transform:translateX(-50%) translateY(-10%)}50%{transform:translateX(50%) translateY(10%)}to{transform:translateX(-50%) translateY(-10%)}}";
 var styles$4 = {"wrapper":"MessyBackground-module_wrapper__LZk-h","svgFilters":"MessyBackground-module_svgFilters__0uaA3","gradientsContainer":"MessyBackground-module_gradientsContainer__B8bIX","g1":"MessyBackground-module_g1__O3-OK","g2":"MessyBackground-module_g2__dldE0","g3":"MessyBackground-module_g3__EqhFt","g4":"MessyBackground-module_g4__3ICs1","g5":"MessyBackground-module_g5__UN1Cz","moveVertical":"MessyBackground-module_moveVertical__uDc9-","moveInCircle":"MessyBackground-module_moveInCircle__N-XZr","moveHorizontal":"MessyBackground-module_moveHorizontal__lcOai","content":"MessyBackground-module_content__wnMmJ"};
 styleInject(css_248z$5);
 
@@ -99,14 +99,31 @@ var MessyBackground = function MessyBackground(_ref) {
   }, children));
 };
 
-var css_248z$4 = ".GlassmorphismBackground-module_wrapper__1-i0Q{background:#0f172a;margin:0;min-height:100%;overflow:hidden;padding:0;position:relative;width:100%}.GlassmorphismBackground-module_blobContainer__GOSMt{height:100%;position:fixed;width:100%;z-index:1}.GlassmorphismBackground-module_blob__OZC-2{animation:GlassmorphismBackground-module_move__a20Io 20s infinite alternate;border-radius:50%;filter:blur(80px);height:50vw;opacity:.6;position:absolute;width:50vw}@media (max-width:768px){.GlassmorphismBackground-module_blob__OZC-2{height:80vw;width:80vw}}.GlassmorphismBackground-module_blob1__k91qU{animation-delay:0s;background:#3b82f6;left:-10%;top:-10%}.GlassmorphismBackground-module_blob2__4DD-m{animation-delay:-5s;background:#a855f7;bottom:-10%;right:-10%}.GlassmorphismBackground-module_blob3__fSa6N{animation-delay:-10s;background:#ec4899;left:30%;top:40%}.GlassmorphismBackground-module_glassLayer__cdtmK{backdrop-filter:blur(40px) saturate(150%);background:rgba(15,23,42,.3);min-height:100%;position:relative;width:100%;z-index:2}.GlassmorphismBackground-module_content__Apl3o{width:100%}@keyframes GlassmorphismBackground-module_move__a20Io{0%{transform:translate(0) scale(1)}to{transform:translate(15%,15%) scale(1.1)}}";
-var styles$3 = {"wrapper":"GlassmorphismBackground-module_wrapper__1-i0Q","blobContainer":"GlassmorphismBackground-module_blobContainer__GOSMt","blob":"GlassmorphismBackground-module_blob__OZC-2","move":"GlassmorphismBackground-module_move__a20Io","blob1":"GlassmorphismBackground-module_blob1__k91qU","blob2":"GlassmorphismBackground-module_blob2__4DD-m","blob3":"GlassmorphismBackground-module_blob3__fSa6N","glassLayer":"GlassmorphismBackground-module_glassLayer__cdtmK","content":"GlassmorphismBackground-module_content__Apl3o"};
+var css_248z$4 = ".GlassmorphismBackground-module_wrapper__1-i0Q{--mouse-x:50%;--mouse-y:50%;background:#0b0f1a;height:100%;min-height:inherit;overflow:hidden;position:relative;width:100%}.GlassmorphismBackground-module_blobContainer__GOSMt{inset:0;position:absolute;z-index:1}.GlassmorphismBackground-module_blob__OZC-2{animation:GlassmorphismBackground-module_floating__RYJOs 15s ease-in-out infinite alternate;border-radius:50%;filter:blur(80px);height:60%;opacity:.45;position:absolute;transition:transform .3s ease-out;width:60%}.GlassmorphismBackground-module_pointerBlob__2NwQG{background:radial-gradient(circle,hsla(0,0%,100%,.15) 0,transparent 70%);filter:blur(40px);height:30%;left:var(--mouse-x);pointer-events:none;position:absolute;top:var(--mouse-y);transform:translate(-50%,-50%);transition:top .15s ease-out,left .15s ease-out;width:30%;z-index:2}.GlassmorphismBackground-module_blob1__k91qU{background:#3b82f6;left:-5%;top:-10%}.GlassmorphismBackground-module_blob2__4DD-m{animation-delay:-4s;background:#a855f7;bottom:-10%;right:-5%}.GlassmorphismBackground-module_blob3__fSa6N{animation-delay:-8s;background:#ec4899;height:40%;left:20%;top:30%;width:40%}.GlassmorphismBackground-module_glassLayer__cdtmK{backdrop-filter:blur(60px) saturate(180%);background:rgba(11,15,26,.4);border:1px solid hsla(0,0%,100%,.05);height:100%;position:relative;width:100%;z-index:3}.GlassmorphismBackground-module_content__Apl3o{align-items:center;display:flex;height:100%;justify-content:center;position:relative;width:100%}@keyframes GlassmorphismBackground-module_floating__RYJOs{0%{transform:translate(0) scale(1)}33%{transform:translate(5%,10%) scale(1.05)}66%{transform:translate(-5%,5%) scale(.95)}to{transform:translate(0) scale(1)}}@media (max-width:768px){.GlassmorphismBackground-module_blob__OZC-2{filter:blur(50px);height:50%;width:80%}}";
+var styles$3 = {"wrapper":"GlassmorphismBackground-module_wrapper__1-i0Q","blobContainer":"GlassmorphismBackground-module_blobContainer__GOSMt","blob":"GlassmorphismBackground-module_blob__OZC-2","floating":"GlassmorphismBackground-module_floating__RYJOs","pointerBlob":"GlassmorphismBackground-module_pointerBlob__2NwQG","blob1":"GlassmorphismBackground-module_blob1__k91qU","blob2":"GlassmorphismBackground-module_blob2__4DD-m","blob3":"GlassmorphismBackground-module_blob3__fSa6N","glassLayer":"GlassmorphismBackground-module_glassLayer__cdtmK","content":"GlassmorphismBackground-module_content__Apl3o"};
 styleInject(css_248z$4);
 
 var GlassmorphismBackground = function GlassmorphismBackground(_ref) {
   var children = _ref.children;
+  var wrapperRef = useRef(null);
+
+  // Track mouse position relative to the container
+  var handleMouseMove = function handleMouseMove(e) {
+    if (!wrapperRef.current) return;
+    var rect = wrapperRef.current.getBoundingClientRect();
+
+    // Convert to percentage of the container
+    var x = (e.clientX - rect.left) / rect.width * 100;
+    var y = (e.clientY - rect.top) / rect.height * 100;
+
+    // Update CSS Variables for the blobs to use
+    wrapperRef.current.style.setProperty('--mouse-x', "".concat(x, "%"));
+    wrapperRef.current.style.setProperty('--mouse-y', "".concat(y, "%"));
+  };
   return /*#__PURE__*/React.createElement("div", {
-    className: styles$3.wrapper
+    className: styles$3.wrapper,
+    ref: wrapperRef,
+    onMouseMove: handleMouseMove
   }, /*#__PURE__*/React.createElement("div", {
     className: styles$3.blobContainer
   }, /*#__PURE__*/React.createElement("div", {
@@ -115,6 +132,8 @@ var GlassmorphismBackground = function GlassmorphismBackground(_ref) {
     className: "".concat(styles$3.blob, " ").concat(styles$3.blob2)
   }), /*#__PURE__*/React.createElement("div", {
     className: "".concat(styles$3.blob, " ").concat(styles$3.blob3)
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$3.pointerBlob
   })), /*#__PURE__*/React.createElement("div", {
     className: styles$3.glassLayer
   }, /*#__PURE__*/React.createElement("div", {
@@ -122,20 +141,101 @@ var GlassmorphismBackground = function GlassmorphismBackground(_ref) {
   }, children)));
 };
 
-var css_248z$3 = ".StarfieldBackground-module_wrapper__k7Ain{background:radial-gradient(ellipse at bottom,#1b2735 0,#090a0f 100%);margin:0;min-height:100%;overflow:hidden;padding:0;position:relative;width:100%}.StarfieldBackground-module_stars__pRanV{animation:StarfieldBackground-module_animStar__Kg5LN 50s linear infinite}.StarfieldBackground-module_stars__pRanV,.StarfieldBackground-module_stars__pRanV:after{background:transparent;box-shadow:1744px 122px #fff,134px 1321px #fff,86px 859px #fff;height:1px;width:1px}.StarfieldBackground-module_stars__pRanV:after{content:\" \";position:absolute;top:2000px}.StarfieldBackground-module_content__WXlBl{position:relative;width:100%;z-index:10}@keyframes StarfieldBackground-module_animStar__Kg5LN{0%{transform:translateY(0)}to{transform:translateY(-2000px)}}";
-var styles$2 = {"wrapper":"StarfieldBackground-module_wrapper__k7Ain","stars":"StarfieldBackground-module_stars__pRanV","animStar":"StarfieldBackground-module_animStar__Kg5LN","content":"StarfieldBackground-module_content__WXlBl"};
+var css_248z$3 = ".StarfieldBackground-module_wrapper__k7Ain{align-items:center;background:radial-gradient(circle at 50% 50%,#0d122b 0,#02040a 100%);display:flex;height:100%;justify-content:center;min-height:inherit;overflow:hidden;position:relative;width:100%}.StarfieldBackground-module_canvas__rZpWE{display:block;filter:blur(.4px);height:100%!important;left:0;pointer-events:all;position:absolute;top:0;width:100%!important;z-index:1}.StarfieldBackground-module_wrapper__k7Ain:after{background:radial-gradient(circle at 50% 50%,rgba(79,70,229,.05) 0,transparent 70%);content:\"\";height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%;z-index:2}.StarfieldBackground-module_content__WXlBl{align-items:center;color:#fff;display:flex;flex-direction:column;height:100%;justify-content:center;pointer-events:none;position:relative;width:100%;z-index:10}.StarfieldBackground-module_content__WXlBl>*{pointer-events:auto}";
+var styles$2 = {"wrapper":"StarfieldBackground-module_wrapper__k7Ain","canvas":"StarfieldBackground-module_canvas__rZpWE","content":"StarfieldBackground-module_content__WXlBl"};
 styleInject(css_248z$3);
 
 var StarfieldBackground = function StarfieldBackground(_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+    _ref$starCount = _ref.starCount,
+    starCount = _ref$starCount === void 0 ? 150 : _ref$starCount,
+    _ref$speed = _ref.speed,
+    speed = _ref$speed === void 0 ? 0.5 : _ref$speed;
+  var canvasRef = useRef(null);
+  var wrapperRef = useRef(null); // 1. Add a ref for the wrapper
+  var mouseRef = useRef({
+    x: -1000,
+    y: -1000
+  }); // Start off-screen
+
+  useEffect(function () {
+    var canvas = canvasRef.current;
+    var wrapper = wrapperRef.current; // 2. Reference the wrapper
+    var ctx = canvas.getContext('2d');
+    var animationFrameId;
+    var handleResize = function handleResize() {
+      // Set drawing surface to match visual size
+      canvas.width = wrapper.offsetWidth;
+      canvas.height = wrapper.offsetHeight;
+    };
+    var handleMouseMove = function handleMouseMove(e) {
+      var rect = wrapper.getBoundingClientRect();
+      mouseRef.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    };
+
+    // Reset mouse when leaving so stars return to normal
+    var handleMouseLeave = function handleMouseLeave() {
+      mouseRef.current = {
+        x: -1000,
+        y: -1000
+      };
+    };
+    window.addEventListener('resize', handleResize);
+    wrapper.addEventListener('mousemove', handleMouseMove);
+    wrapper.addEventListener('mouseleave', handleMouseLeave);
+    handleResize();
+    var stars = Array.from({
+      length: starCount
+    }, function () {
+      return {
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 2,
+        opacity: Math.random(),
+        speed: Math.random() * speed
+      };
+    });
+    var _draw = function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(function (star) {
+        var xPx = star.x / 100 * canvas.width;
+        var yPx = star.y / 100 * canvas.height;
+        var dx = mouseRef.current.x - xPx;
+        var dy = mouseRef.current.y - yPx;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+
+        // Parallax effect
+        if (dist < 200) {
+          var force = (200 - dist) / 200;
+          xPx -= dx * force * 0.05; // Slightly stronger reaction
+          yPx -= dy * force * 0.05;
+        }
+        ctx.fillStyle = "rgba(255, 255, 255, ".concat(star.opacity, ")");
+        ctx.beginPath();
+        ctx.arc(xPx, yPx, star.size, 0, Math.PI * 2);
+        ctx.fill();
+        star.y -= star.speed;
+        if (star.y < 0) star.y = 100;
+      });
+      animationFrameId = requestAnimationFrame(_draw);
+    };
+    _draw();
+    return function () {
+      window.removeEventListener('resize', handleResize);
+      wrapper.removeEventListener('mousemove', handleMouseMove);
+      wrapper.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [starCount, speed]);
   return /*#__PURE__*/React.createElement("div", {
+    ref: wrapperRef,
     className: styles$2.wrapper
-  }, /*#__PURE__*/React.createElement("div", {
-    className: styles$2.stars
-  }), /*#__PURE__*/React.createElement("div", {
-    className: styles$2.stars2
-  }), /*#__PURE__*/React.createElement("div", {
-    className: styles$2.stars3
+  }, /*#__PURE__*/React.createElement("canvas", {
+    ref: canvasRef,
+    className: styles$2.canvas
   }), /*#__PURE__*/React.createElement("div", {
     className: styles$2.content
   }, children));
@@ -280,21 +380,40 @@ var MatrixBackground$1 = function MatrixBackground(_ref) {
   }));
 };
 
-var css_248z$1 = ".WavesBackground-module_wrapper__TY9mV{background:#001220;display:flex;flex-direction:column;min-height:100vh;overflow:hidden;position:relative;width:100%}.WavesBackground-module_waveContainer__FWWgb{bottom:0;left:0;line-height:0;position:absolute;width:100%}.WavesBackground-module_waves__vgFum{height:15vh;margin-bottom:-7px;max-height:150px;min-height:100px;position:relative;width:100%}.WavesBackground-module_content__wLKxS{position:relative;width:100%;z-index:10}.WavesBackground-module_parallax__9m3XM>use{animation:WavesBackground-module_moveForever__IkmSJ 25s cubic-bezier(.55,.5,.45,.5) infinite}.WavesBackground-module_parallax__9m3XM>use:first-child{animation-delay:-2s;animation-duration:7s;opacity:.7}.WavesBackground-module_parallax__9m3XM>use:nth-child(2){animation-delay:-3s;animation-duration:10s;opacity:.5}.WavesBackground-module_parallax__9m3XM>use:nth-child(3){animation-delay:-4s;animation-duration:13s;opacity:.3}.WavesBackground-module_parallax__9m3XM>use:nth-child(4){animation-delay:-5s;animation-duration:20s}@keyframes WavesBackground-module_moveForever__IkmSJ{0%{transform:translate3d(-90px,0,0)}to{transform:translate3d(85px,0,0)}}";
-var styles = {"wrapper":"WavesBackground-module_wrapper__TY9mV","waveContainer":"WavesBackground-module_waveContainer__FWWgb","waves":"WavesBackground-module_waves__vgFum","content":"WavesBackground-module_content__wLKxS","parallax":"WavesBackground-module_parallax__9m3XM","moveForever":"WavesBackground-module_moveForever__IkmSJ"};
+var css_248z$1 = ".WavesBackground-module_wrapper__TY9mV{--wave-shift:0px;background:#0f172a;display:flex;flex-direction:column;height:100%;overflow:hidden;position:relative;width:100%}.WavesBackground-module_waveContainer__FWWgb{bottom:0;height:150px;pointer-events:none;position:absolute;width:100%;z-index:1}.WavesBackground-module_waves__vgFum{height:100%;transform:translateX(var(--wave-shift));transition:transform .2s ease-out;width:100%}.WavesBackground-module_content__wLKxS{height:100%;pointer-events:none;position:relative;width:100%;z-index:5}.WavesBackground-module_content__wLKxS>*{pointer-events:auto}.WavesBackground-module_parallax__9m3XM>use{animation:WavesBackground-module_move-forever__TvzDy 25s cubic-bezier(.55,.5,.45,.5) infinite}.WavesBackground-module_waveLayer1__DhvaO{fill:rgba(79,70,229,.7);animation-delay:-2s;animation-duration:7s}.WavesBackground-module_waveLayer2__h8GKU{fill:rgba(79,70,229,.5);animation-delay:-3s;animation-duration:10s}.WavesBackground-module_waveLayer3__Qlcvu{fill:rgba(79,70,229,.3);animation-delay:-4s;animation-duration:13s}.WavesBackground-module_waveLayer4__FzN0V{fill:#4f46e5;animation-delay:-5s;animation-duration:20s}@keyframes WavesBackground-module_move-forever__TvzDy{0%{transform:translate3d(-90px,0,0)}to{transform:translate3d(85px,0,0)}}";
+var styles = {"wrapper":"WavesBackground-module_wrapper__TY9mV","waveContainer":"WavesBackground-module_waveContainer__FWWgb","waves":"WavesBackground-module_waves__vgFum","content":"WavesBackground-module_content__wLKxS","parallax":"WavesBackground-module_parallax__9m3XM","move-forever":"WavesBackground-module_move-forever__TvzDy","waveLayer1":"WavesBackground-module_waveLayer1__DhvaO","waveLayer2":"WavesBackground-module_waveLayer2__h8GKU","waveLayer3":"WavesBackground-module_waveLayer3__Qlcvu","waveLayer4":"WavesBackground-module_waveLayer4__FzN0V"};
 styleInject(css_248z$1);
-
-// src/components/core/Background/preset/Waves/WavesBackground.jsx
 
 var WavesBackground = function WavesBackground(_ref) {
   var children = _ref.children,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? "" : _ref$className;
+  var wrapperRef = useRef(null);
+  var handleMouseMove = function handleMouseMove(e) {
+    if (!wrapperRef.current) return;
+
+    // Use getBoundingClientRect to ensure accuracy even if zoomed/scrolled
+    var rect = wrapperRef.current.getBoundingClientRect();
+
+    // Calculate relative X position (0 to 1)
+    var x = (e.clientX - rect.left) / rect.width;
+
+    // Calculate shift (-30px to 30px)
+    var shift = (x - 0.5) * 60;
+
+    // Set the property on the wrapper so all children can access it
+    wrapperRef.current.style.setProperty('--wave-shift', "".concat(shift, "px"));
+  };
   return /*#__PURE__*/React.createElement("div", {
-    className: "".concat(styles.wrapper, " ").concat(className)
+    ref: wrapperRef,
+    className: "".concat(styles.wrapper, " ").concat(className),
+    onMouseMove: handleMouseMove
+    // Ensure the container catches the mouse even if moving fast
+    ,
+    onMouseLeave: function onMouseLeave() {
+      if (wrapperRef.current) wrapperRef.current.style.setProperty('--wave-shift', '0px');
+    }
   }, /*#__PURE__*/React.createElement("div", {
-    className: styles.content
-  }, children), /*#__PURE__*/React.createElement("div", {
     className: styles.waveContainer
   }, /*#__PURE__*/React.createElement("svg", {
     className: styles.waves,
@@ -310,23 +429,25 @@ var WavesBackground = function WavesBackground(_ref) {
     href: "#gentle-wave",
     x: "48",
     y: "0",
-    fill: "rgba(79, 70, 229, 0.7)"
+    className: styles.waveLayer1
   }), /*#__PURE__*/React.createElement("use", {
     href: "#gentle-wave",
     x: "48",
     y: "3",
-    fill: "rgba(79, 70, 229, 0.5)"
+    className: styles.waveLayer2
   }), /*#__PURE__*/React.createElement("use", {
     href: "#gentle-wave",
     x: "48",
     y: "5",
-    fill: "rgba(79, 70, 229, 0.3)"
+    className: styles.waveLayer3
   }), /*#__PURE__*/React.createElement("use", {
     href: "#gentle-wave",
     x: "48",
     y: "7",
-    fill: "#4f46e5"
-  })))));
+    className: styles.waveLayer4
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: styles.content
+  }, children));
 };
 
 // src/components/core/Background/Background.jsx

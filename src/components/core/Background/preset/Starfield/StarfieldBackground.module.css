@@ -1,41 +1,62 @@
-/* src/components/core/Background/presets/Starfield/StarfieldBackground.css */
-
+/* 1. Main Wrapper: The "Stage" */
 .wrapper {
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    min-height: 100%;
-    width: 100%;
-    overflow: hidden;
     position: relative;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: inherit; /* Inherits height from parent */
+    overflow: hidden;
+    /* Deep Space Gradient */
+    background: radial-gradient(circle at 50% 50%, #0d122b 0%, #02040a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Creating layers of stars using box-shadows */
-.stars {
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: 1744px 122px #FFF, 134px 1321px #FFF, 86px 859px #FFF; /* Add many more points for density */
-    animation: animStar 50s linear infinite;
-}
-
-.stars:after {
-    content: " ";
+/* 2. The Canvas: The "Starfield" */
+.canvas {
     position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: 1744px 122px #FFF, 134px 1321px #FFF, 86px 859px #FFF;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+    display: block;
+    /* This makes the stars look slightly glowy/soft */
+    filter: blur(0.4px); 
+    pointer-events: all;
 }
 
+/* 3. Subtle Overlay: Adds "Depth" to space */
+.wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adds a very subtle purple/blue haze in the center */
+    background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 4. Content Layer: Where your children go */
 .content {
     position: relative;
     z-index: 10;
     width: 100%;
+    height: 100%;
+    /* Center children by default */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* Allows mouse events to pass through to canvas unless a child is hovered */
+    pointer-events: none; 
 }
 
-@keyframes animStar {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-2000px); }
+/* 5. Ensure interactive elements inside content still work */
+.content > * {
+    pointer-events: auto;
 }
