@@ -65,12 +65,19 @@ Click the **Fork** button on GitHub and clone your fork:
     src/components/core/
 **Expected structure:**
 ```text
-    ComponentName/
-        ├── ComponentName.jsx
-        ├── ComponentName.css
-        ├── preset.css
-        ├── ComponentName.d.ts
-        └── index.js
+    ComponentType/
+        ├── preset/
+        |       ├── ComponentName/
+        |       ├──...      ├── ComponentName.jsx
+        |                   └── ComponentName.module.css
+        ├── ComponentType.d.ts
+        └── ComponentType.jsx
+    
+    example:- 
+        ComponentType = Background,
+        preset = Wave,
+        ComponentName = WaveBackground,
+        For file formate you can check any one folder from component/core   
 ```
 
 ### Environment Component (Full Theme)
@@ -78,10 +85,13 @@ Click the **Fork** button on GitHub and clone your fork:
     src/components/environments/
 **Expected Structure**
 ```text
-    ThemeName/
-    ├── ThemeName.jsx
-    ├── ThemeName.css
-    └── index.js
+    ComponentName/
+        |    ├── ComponentName.jsx
+        |    ├── ComponentName.module.css
+        |    └── ComponentName.d.ts
+        |
+        ├── index.d.ts
+        └── index.js
 ```
 
 ##   📝 Coding Guidelines

@@ -38,16 +38,18 @@
 ```bash
 npm install codevora-ui
 ```
-## ✅ Usages Example [App.jsx]
+## ✅ Usages Example [App.jsx] 
+- ### Some presets for Background [Matrix, Waves, Cyberpunk, Glassmorphism, Matrix, Messy, Starfield]
+- ### For more checkout [**CodeVora UI**] (https://codevora140.vercel.app/react-library/topics)
 ```bash
-    import { HackerThemeBG } from 'codevora-ui';
+    import { Background } from 'codevora-ui';
     ...
     return(
-        <HackerThemeBG>
+        <Background preset='Matrix'>
             <div style={{minHeight: "100vh"}}>
                 Hello
             </ div>
-        </HackerThemeBG>
+        </Background>
     );
 ```
 ## 📄 License
@@ -65,11 +67,21 @@ codevora-ui/
   │     │
   │     ├── components/
   │     │       ├── core/
-  │     │       │       ├── Button/
-  │     │       │       │       ├── Button.jsx
-  │     │       │       │       ├── Button.css
-  │     │       │       │       ├── preset.css
-  │     │       │       │       └── Button.d.ts
+  │     │       │       ├── Background/
+  │     │       │       │       ├── Background.jsx
+  │     │       │       │       ├── Background.d.ts
+  │     │       │       │       └── preset/
+  |     |       |       |             ├── Matrix/
+  |     |       |       |             |      ├── MatrixBackground.jsx
+  │     │       │       │             |      └── MatrixBackground.module.css
+  |     |       |       |             |
+  |     |       |       |             ├── Waves/
+  |     |       |       |             |      ├── WavesBackground.jsx
+  |     |       |       |             |      └── WavesBackground.module.css
+  |     |       |       |             |
+  |     |       |       |             ├──Cyberpunk/
+  |     |       |       |             ├──Messy/
+  |     |       |       |             └── ..../
   │     │       │       ├── index.js
   │     │       │       └── index.d.ts
   │     │       │
@@ -78,8 +90,8 @@ codevora-ui/
   │     │       │       │       ├── HackerBackground.jsx
   │     │       │       │       ├── HackerBackground.css
   │     │       │       │       └── index.js
-  │     │       │       ├── CyberpunkBackground/
-  │     │       │       │       └── ...
+  │     │       │       ├── .../
+  │     │       │       │   
   │     │       │       ├── index.js
   │     │       │       └── index.d.ts
   │     │       │

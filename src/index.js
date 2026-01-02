@@ -2,4 +2,5 @@
 
 
 // src/index.js
+export * from './components/core';
 export * from './components/environments';
