@@ -1,0 +1,80 @@
+/* src/components/core/Background/presets/Matrix/MatrixBackground.module.css */
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: #020502;
+    overflow: hidden;
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.35;
+    filter: blur(1px);
+}
+
+.gridOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gridGlow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 255, 65, 0.08),
+        transparent 60%
+    );
+}
+
+.vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, #020502 150%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.scanline {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.05), transparent);
+    animation: scan 8s linear infinite;
+    z-index: 11;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}

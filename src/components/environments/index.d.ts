@@ -3,4 +3,3 @@
 
 // environments/index.d.ts
 export { MatrixBackground } from './MatrixBackground/MatrixBackground';
-// export { CyberpunkBackground } from './CyberpunkBackground/CyberpunkBackground';

@@ -1,0 +1,71 @@
+/* src/components/core/Background/presets/Messy/MessyBackground.module.css */
+
+.wrapper {
+    width: 100%;
+    min-height: 100%; /* Changed from 100% to 100vh */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(40deg, #08001f, #001932);
+    margin: 0;
+    padding: 0;
+}
+
+.svgFilters {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.gradientsContainer {
+    /* If the filter fails, the blur still provides a nice effect */
+    filter: url(#goo) blur(70px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.g1, .g2, .g3, .g4, .g5 {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
+}
+
+.g1 { background: radial-gradient(circle at center, rgba(18, 113, 255, 0.8) 0, rgba(18, 113, 255, 0) 50%) no-repeat; animation: moveVertical 30s ease infinite; }
+.g2 { background: radial-gradient(circle at center, rgba(221, 74, 255, 0.8) 0, rgba(221, 74, 255, 0) 50%) no-repeat; animation: moveInCircle 20s reverse infinite; }
+.g3 { background: radial-gradient(circle at center, rgba(100, 220, 255, 0.8) 0, rgba(100, 220, 255, 0) 50%) no-repeat; animation: moveInCircle 40s linear infinite; }
+.g4 { background: radial-gradient(circle at center, rgba(200, 50, 50, 0.8) 0, rgba(200, 50, 50, 0) 50%) no-repeat; animation: moveHorizontal 25s ease infinite; }
+.g5 { background: radial-gradient(circle at center, rgba(180, 180, 50, 0.8) 0, rgba(180, 180, 50, 0) 50%) no-repeat; animation: moveInCircle 20s ease infinite; }
+
+.content {
+    position: relative; /* Changed from absolute to relative for better content flow */
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+}
+
+@keyframes moveInCircle {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes moveVertical {
+    0% { transform: translateY(-50%); }
+    50% { transform: translateY(50%); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes moveHorizontal {
+    0% { transform: translateX(-50%) translateY(-10%); }
+    50% { transform: translateX(50%) translateY(10%); }
+    100% { transform: translateX(-50%) translateY(-10%); }
+}

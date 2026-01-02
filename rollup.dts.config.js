@@ -1,3 +1,5 @@
+// root/rollup.dts.config.js
+
 import dts from "rollup-plugin-dts";
 
 export default {
