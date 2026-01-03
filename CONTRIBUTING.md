@@ -62,7 +62,7 @@ Click the **Fork** button on GitHub and clone your fork:
 
 ### Core Component (Preset-based)
 **Location:**
-    src/components/core/
+    src/components/core/ </br>
 **Expected structure:**
 ```text
     ComponentType/
@@ -82,7 +82,7 @@ Click the **Fork** button on GitHub and clone your fork:
 
 ### Environment Component (Full Theme)
 **Location:**
-    src/components/environments/
+    src/components/environments/ </br>
 **Expected Structure**
 ```text
     ComponentName/
