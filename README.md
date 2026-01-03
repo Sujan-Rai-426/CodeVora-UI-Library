@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/npm/v/codevora-ui?style=flat-square&color=cb3837" alt="NPM Version" />
   </p>
 
-  <code>npm i codevora-ui</code> &nbsp;•&nbsp; <code>npm i codevora-ui@latest</code>
+  <code>npm install codevora-ui</code> &nbsp;
 
   <br />
 
@@ -24,6 +24,16 @@
 
   ---
 </div>
+
+
+# CodeVora UI Library
+
+![npm version](https://img.shields.io/npm/v/codevora-ui?style=for-the-badge&color=00ff41)
+![npm downloads](https://img.shields.io/npm/dm/codevora-ui?style=for-the-badge&color=white)
+![bundle size](https://img.shields.io/bundlephobia/min/codevora-ui?style=for-the-badge)
+
+<p> High-performance theme based UI components. </p>
+
 
 # About CodeVora UI 💎
 **CodeVora UI** is a specialized React component library designed for developers who want to add "Hacker-style," high-performance, and deeply animated visual elements to their web applications without the heavy lifting of custom CSS and Canvas logic.
