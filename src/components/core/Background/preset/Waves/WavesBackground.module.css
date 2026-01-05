@@ -1,13 +1,8 @@
 .wrapper {
     position: relative;
     width: 100%;
-<<<<<<< HEAD
-    min-height: 100%;
-    background: #001220; /* Deep Ocean Blue */
-=======
     height: 100%;
     background: #0f172a;
->>>>>>> main
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -26,21 +21,11 @@
 }
 
 .waves {
-<<<<<<< HEAD
-    position: relative;
-    width: 150%;
-    overflow: hidden;
-    height: 15%;
-    margin-bottom: -7px; /* Fix for safari gap */
-    min-height: 100px;
-    max-height: 150px;
-=======
     width: 100%;
     height: 100%;
     /* Apply the shift here! */
     transform: translateX(var(--wave-shift));
     transition: transform 0.2s ease-out; /* Smooth follow effect */
->>>>>>> main
 }
 
 .content {
