@@ -1,35 +1,24 @@
 .wrapper {
     position: relative;
     width: 100%;
-    height: 100%; /* Important: parent must have height */
+    height: 100%;
     min-height: inherit;
-    background: #0b0f1a; /* Darker navy for better glass contrast */
+    background: #0b0f1a;
     overflow: hidden;
-    --mouse-x: 50%; /* Default values */
+    --mouse-x: 50%;
     --mouse-y: 50%;
 }
 
 .blobContainer {
-<<<<<<< HEAD
-    /* position: fixed; */
-    width: 100%;
-    height: 100%;
-=======
     position: absolute;
     inset: 0;
->>>>>>> main
     z-index: 1;
 }
 
 .blob {
     position: absolute;
-<<<<<<< HEAD
-    width: 50%;
-    height: 50%;
-=======
-    width: 60%; /* Uses % of parent container */
+    width: 60%; 
     height: 60%;
->>>>>>> main
     filter: blur(80px);
     border-radius: 50%;
     opacity: 0.45;
@@ -53,15 +42,8 @@
 }
 
 /* Blob Colors and Placements */
-.blob1 { 
-    background: #3b82f6; 
-    top: -10%; left: -5%; 
-}
-.blob2 { 
-    background: #a855f7; 
-    bottom: -10%; right: -5%; 
-    animation-delay: -4s;
-}
+.blob1 { background: #3b82f6; top: -10%; left: -5%; }
+.blob2 { background: #a855f7; bottom: -10%; right: -5%; animation-delay: -4s; }
 .blob3 { 
     background: #ec4899; 
     top: 30%; left: 20%; 
@@ -74,7 +56,6 @@
     z-index: 3;
     width: 100%;
     height: 100%;
-    /* The Glass Effect */
     backdrop-filter: blur(60px) saturate(180%);
     background: rgba(11, 15, 26, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -96,15 +77,10 @@
     100% { transform: translate(0, 0) scale(1); }
 }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
     .blob {
         width: 80%;
-<<<<<<< HEAD
-        height: 80%;
-=======
         height: 50%;
         filter: blur(50px);
->>>>>>> main
     }
 }
