@@ -1,67 +1,86 @@
-.wavesContainer {
+.wrapper {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #001f3f; /* Deep navy */
+    min-height: inherit;
+    background: #0b0f1a;
     overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.blobContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.blob {
+    position: absolute;
+    width: 60%; 
+    height: 60%;
+    filter: blur(80px);
+    border-radius: 50%;
+    opacity: 0.45;
+    transition: transform 0.3s ease-out;
+    animation: floating 15s infinite alternate ease-in-out;
+}
+
+/* Mouse Interaction Blob */
+.pointerBlob {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+    transition: top 0.15s ease-out, left 0.15s ease-out;
+}
+
+/* Blob Colors and Placements */
+.blob1 { background: #3b82f6; top: -10%; left: -5%; }
+.blob2 { background: #a855f7; bottom: -10%; right: -5%; animation-delay: -4s; }
+.blob3 { 
+    background: #ec4899; 
+    top: 30%; left: 20%; 
+    width: 40%; height: 40%;
+    animation-delay: -8s;
+}
+
+.glassLayer {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(60px) saturate(180%);
+    background: rgba(11, 15, 26, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('https://raw.githubusercontent.com/Sujan-Rai-426/Photos/main/wave.png');
-    background-size: 1000px 100px;
+@keyframes floating {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(5%, 10%) scale(1.05); }
+    66% { transform: translate(-5%, 5%) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
-.wave1 {
-    animation: animate 30s linear infinite;
-    z-index: 1000;
-    opacity: 1;
-    animation-delay: 0s;
-    bottom: 0;
-}
-
-.wave2 {
-    animation: animate2 15s linear infinite;
-    z-index: 999;
-    opacity: 0.5;
-    animation-delay: -5s;
-    bottom: 10px;
-}
-
-.wave3 {
-    animation: animate 30s linear infinite;
-    z-index: 998;
-    opacity: 0.2;
-    animation-delay: -2s;
-    bottom: 15px;
-}
-
-.wave4 {
-    animation: animate2 5s linear infinite;
-    z-index: 997;
-    opacity: 0.7;
-    animation-delay: -5s;
-    bottom: 20px;
-}
-
-@keyframes animate {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1000px; }
-}
-
-@keyframes animate2 {
-    0% { background-position-x: 0; }
-    100% { background-position-x: -1000px; }
-}
-
-.content {
-    position: relative;
-    z-index: 1001;
+@media (max-width: 768px) {
+    .blob {
+        width: 80%;
+        height: 50%;
+        filter: blur(50px);
+    }
 }

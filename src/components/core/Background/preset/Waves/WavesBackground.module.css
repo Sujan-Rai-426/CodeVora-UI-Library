@@ -21,8 +21,8 @@
 }
 
 .waves {
-    width: 140%;
-    height: 140%;
+    width: 100%;
+    height: 100%;
     /* Apply the shift here! */
     transform: translateX(var(--wave-shift));
     transition: transform 0.2s ease-out; /* Smooth follow effect */
