@@ -5,7 +5,7 @@
          width="180" />
   </a>
 
-  # CodeVora UI Library `1.0.5`
+  # CodeVora UI Library `1.0.4`
 
   ### The Modern Animated UI Components Library for Web Developers
   *Free, Animated, and Professional UI Components for high-end React apps.*
