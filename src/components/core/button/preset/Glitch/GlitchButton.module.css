@@ -1,0 +1,125 @@
+.glitchBtn {
+    position: relative;
+    background: transparent;
+    border: 2px solid var(--glitch-color);
+    border-radius: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex; /* Use inline-flex so padding defines width */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.contentWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.glitchLayer {
+    position: absolute;
+    /* Centers layers exactly over text regardless of button padding */
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.scanline {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--glitch-color);
+    opacity: 0;
+    z-index: 6;
+    pointer-events: none;
+}
+
+/* --- INTERACTION LOGIC --- */
+
+/* Desktop Hover */
+@media (hover: hover) {
+    .glitchBtn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 15px var(--glitch-color);
+    }
+    .glitchBtn:hover .glitchLayer { opacity: 1; }
+    .glitchBtn:hover .scanline {
+        opacity: 0.3;
+        animation: scanlineMove 0.8s linear infinite;
+    }
+}
+
+/* Smart Mobile/Tablet Trigger (Force Glitch) */
+.forceGlitch {
+    transform: scale(0.95) skewX(-5deg);
+    background: var(--glitch-color) !important;
+    box-shadow: 0 0 25px var(--glitch-color);
+}
+
+.forceGlitch .glitchLayer { opacity: 1 !important; }
+.forceGlitch .scanline {
+    opacity: 0.7 !important;
+    animation: scanlineMove 0.4s linear infinite !important;
+}
+
+/* Haptic feedback on active press */
+.glitchBtn:active {
+    transform: scale(0.92) skewX(-10deg);
+}
+
+/* --- ANIMATIONS --- */
+
+.glitchLayer:nth-child(2) {
+    color: #ff00c1;
+    animation: glitchMove 0.3s infinite;
+    /* Center + Offset */
+    transform: translate(calc(-50% - 3px), calc(-50% - 2px));
+    text-shadow: 2px 0 #ff00c1;
+}
+
+.glitchLayer:nth-child(3) {
+    color: #00fff9;
+    animation: glitchMove 0.3s infinite reverse;
+    /* Center + Offset */
+    transform: translate(calc(-50% + 3px), calc(-50% + 2px));
+    text-shadow: -2px 0 #00fff9;
+}
+
+@keyframes glitchMove {
+    0% { clip-path: inset(10% 0 80% 0); }
+    20% { clip-path: inset(50% 0 30% 0); }
+    40% { clip-path: inset(20% 0 60% 0); }
+    60% { clip-path: inset(80% 0 5% 0); }
+    80% { clip-path: inset(40% 0 45% 0); }
+    100% { clip-path: inset(10% 0 80% 0); }
+}
+
+@keyframes scanlineMove {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}

@@ -62,16 +62,16 @@
 }
 
 .shape1 {
-    width: 400px;
-    height: 400px;
+    width: clamp(80px, 200px, 400px);
+    height: clamp(80px, 200px, 400px);
     background: var(--neon-magenta);
     top: -100px;
     right: -100px;
 }
 
 .shape2 {
-    width: 300px;
-    height: 300px;
+    width: clamp(60px, 150px ,300px);
+    height: clamp(60px, 150px ,300px);
     background: var(--neon-cyan);
     bottom: 10%;
     left: -50px;

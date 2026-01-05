@@ -1,0 +1,63 @@
+.rippleBtn {
+    position: relative;
+    background: transparent;
+    border: 2px solid var(--ripple-color);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Clips the expanding ripple */
+    color: var(--ripple-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.label {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.rippleContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--ripple-color);
+    opacity: 0.6;
+    transform: scale(0);
+    animation: rippleEffect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* --- INTERACTION --- */
+
+@media (hover: hover) {
+    .rippleBtn:hover {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 0 10px var(--ripple-color);
+    }
+}
+
+.rippleBtn:active {
+    transform: scale(0.97);
+}

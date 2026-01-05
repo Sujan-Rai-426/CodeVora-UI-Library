@@ -1,0 +1,61 @@
+.glassBtn {
+    position: relative;
+    /* Semi-transparent background tinted with the color prop */
+    background: rgba(255, 255, 255, 0.05);
+    
+    /* The magic glass effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Thin highlight border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.label {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Diagonal shine reflection to give it a "glassy" surface */
+.reflection {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.7s;
+}
+
+.glassBtn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glassBtn:hover .reflection {
+    left: 200%;
+}
+
+.glassBtn:active {
+    transform: translateY(0) scale(0.98);
+}

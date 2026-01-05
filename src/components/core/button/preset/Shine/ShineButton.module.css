@@ -1,0 +1,75 @@
+.shineBtn {
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex; /* Inline-flex respects padding for width */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.label {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.shineEffect {
+    position: absolute;
+    top: 0;
+    left: -150%; /* Start further back for smoother entry */
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- INTERACTION STRATEGY --- */
+
+/* Desktop Hover */
+@media (hover: hover) {
+    .shineBtn:hover {
+        filter: brightness(1.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .shineBtn:hover .shineEffect {
+        animation: shineSweep 0.8s ease-in-out forwards;
+    }
+}
+
+/* Smart Mobile/Laptop Trigger */
+.forceShine .shineEffect {
+    animation: shineSweep 0.8s ease-in-out forwards;
+}
+
+.forceShine {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Instant haptic feedback on press */
+.shineBtn:active {
+    transform: scale(0.95);
+}
+
+@keyframes shineSweep {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 250%;
+    }
+}

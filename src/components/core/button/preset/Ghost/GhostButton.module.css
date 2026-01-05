@@ -1,0 +1,70 @@
+.ghostBtn {
+    position: relative;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex; /* Changed to inline-flex for padding support */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.label {
+    position: relative;
+    z-index: 5;
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    color: #fff;
+    pointer-events: none;
+}
+
+.line {
+    position: absolute;
+    background: var(--ghost-color);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+/* Initial hidden positions */
+.top { top: 0; left: -100%; width: 100%; height: 2px; }
+.right { top: -100%; right: 0; width: 2px; height: 100%; }
+.bottom { bottom: 0; right: -100%; width: 100%; height: 2px; }
+.left { bottom: -100%; left: 0; width: 2px; height: 100%; }
+
+/* --- INTERACTION LOGIC --- */
+
+/* Desktop Hover */
+@media (hover: hover) {
+    .ghostBtn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 15px var(--ghost-color);
+        border-color: transparent;
+    }
+
+    .ghostBtn:hover .top { left: 0; }
+    .ghostBtn:hover .right { top: 0; }
+    .ghostBtn:hover .bottom { right: 0; }
+    .ghostBtn:hover .left { bottom: 0; }
+}
+
+/* Smart Mobile/Tablet Trigger (Force Draw) */
+.forceDraw {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: transparent;
+}
+
+.forceDraw .top { left: 0; }
+.forceDraw .right { top: 0; }
+.forceDraw .bottom { right: 0; }
+.forceDraw .left { bottom: 0; }
+
+/* Standard Active State for press feedback */
+.ghostBtn:active {
+    transform: scale(0.96);
+    transition: all 0.1s ease; 
+}

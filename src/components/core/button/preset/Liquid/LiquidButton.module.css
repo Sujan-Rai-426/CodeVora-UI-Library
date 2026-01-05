@@ -1,0 +1,94 @@
+.liquidBtn {
+    position: relative;
+    background: transparent;
+    border: 2px solid var(--liquid-color);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--liquid-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.label {
+    color: white;
+    position: relative;
+    z-index: 5;
+    transition: color 0.4s ease;
+    pointer-events: none;
+}
+
+/* Base Liquid Wave Layer */
+.liquidLayer {
+    position: absolute;
+    /* Starting position: tucked away in the top-left corner */
+    top: -200%;
+    left: -150%;
+    width: 350%;
+    height: 350%;
+    background: var(--liquid-color);
+    border-radius: 42%; /* Wobbly shape */
+    z-index: 1;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: rotate(0deg);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.liquidLayerSecondary {
+    border-radius: 38%;
+    opacity: 0.5;
+    transition-duration: 1.2s; /* Slower for parallax depth */
+}
+
+/* --- INTERACTION LOGIC --- */
+
+/* Desktop Hover: Pour from top-left */
+@media (hover: hover) {
+    .liquidBtn:hover {
+        color: #fff;
+        box-shadow: 0 0 20px rgba(var(--liquid-color), 0.4);
+    }
+
+    .liquidBtn:hover .liquidLayer {
+        top: -70%;
+        left: -50%;
+        transform: rotate(140deg);
+    }
+
+    .liquidBtn:hover .liquidLayerSecondary {
+        transform: rotate(180deg);
+    }
+}
+
+/* Mobile/Tablet Trigger Logic (The Pour Cycle) */
+.forceLiquid {
+    transform: scale(0.96);
+    color: #fff !important;
+}
+
+.forceLiquid .liquidLayer {
+    top: -70%;
+    left: -50%;
+    transform: rotate(140deg);
+    opacity: 1;
+}
+
+.forceLiquid .liquidLayerSecondary {
+    top: -75%;
+    left: -55%;
+    transform: rotate(180deg);
+    opacity: 0.6;
+}
+
+/* Standard Active State */
+.liquidBtn:active {
+    transform: scale(0.94);
+}

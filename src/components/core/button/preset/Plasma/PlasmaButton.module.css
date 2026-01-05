@@ -1,0 +1,56 @@
+.plasmaBtn {
+    position: relative;
+    background: transparent;
+    border: 2px solid var(--plasma-color);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Changed to hidden so the fill stays inside the button */
+    overflow: hidden; 
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 7px var(--plasma-color), 0 0 7px var(--plasma-color);
+    text-shadow: 0 0 5px var(--plasma-color);
+    color: var(--plasma-color);
+}
+
+/* The fluid fill element */
+.plasmaBtn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 0%;
+    height: 0%;
+    /* Gradient gives it a "liquid" rather than a blocky feel */
+    background: radial-gradient(circle, var(--plasma-color) 0%, transparent 70%);
+    background-color: var(--plasma-color); 
+    border-radius: 50%; /* Makes the expansion feel organic/circular */
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+    z-index: 1;
+}
+
+.plasmaBtn:hover::before {
+    width: 250%; /* Large enough to cover the whole button */
+    height: 250%;
+}
+
+.plasmaBtn:hover {
+    color: #fff !important;
+    box-shadow: 0 0 10px var(--plasma-color), 0 0 15px var(--plasma-color);
+    text-shadow: 0 0 10px #fff;
+}
+
+.label {
+    position: relative;
+    z-index: 2; /* Ensures text stays above the fill */
+}
+
+.plasmaBtn:active {
+    transform: scale(0.95);
+    filter: brightness(1.2);
+}

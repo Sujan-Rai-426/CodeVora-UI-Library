@@ -14,6 +14,21 @@ interface BackgroundProps {
 
 declare const Background: React.FC<BackgroundProps>;
 
+type ButtonPreset = 
+    'Shine' | 'Plasma' | 'Ghost' | 'Glass' | 'Glitch' | 
+    'Liquid' | 'Ripple' | 'Default';
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    preset?: ButtonPreset;
+    height?: string;
+    width?: string;
+    color?: string;
+    children?: React.ReactNode;
+    className?: string;
+}
+
+declare const Button: React.FC<ButtonProps>;
+
 interface MatrixBackgroundProps {
     children?: React.ReactNode;
     className?: string;
@@ -21,4 +36,4 @@ interface MatrixBackgroundProps {
 
 declare const MatrixBackground: React.FC<MatrixBackgroundProps>;
 
-export { Background, MatrixBackground };
+export { Background, Button, MatrixBackground };
