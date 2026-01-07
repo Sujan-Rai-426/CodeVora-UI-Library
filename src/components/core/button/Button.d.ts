@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export type ButtonPreset = 
     'Shine' | 'Plasma' | 'Ghost' | 'Glass' | 'Glitch' | 
-    'Liquid' | 'Ripple' | 'Default';
+    'Liquid' | 'Ripple' | 'Brutalist' | 'Base' | 'Default';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     preset?: ButtonPreset;

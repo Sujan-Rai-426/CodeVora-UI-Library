@@ -4,13 +4,16 @@ import styles from './RippleButton.module.css';
 export const RippleButton = ({ 
     padding, 
     color, 
-    children, 
+    children,
+    processing,
+    processingText = "", 
     className = "", 
     ...props 
 }) => {
     const [ripples, setRipples] = useState([]);
 
     const createRipple = (event) => {
+        if (processing) return; // Prevent ripples during processing
         const button = event.currentTarget;
         const rect = button.getBoundingClientRect();
         
@@ -42,9 +45,24 @@ export const RippleButton = ({
             className={`${styles.rippleBtn} ${className}`}
             style={{ padding, '--ripple-color': color, borderColor: color }}
             onMouseDown={createRipple}
+            disabled={processing || props.disabled}
             {...props}
         >
-            <span className={styles.label}>{children}</span>
+            {/* Hide label when processing */}
+            <span className={processing ? styles.hidden : styles.label}>
+                {children}
+            </span>
+
+            {/* Processing State */}
+            {processing && (
+                <div className={styles.spinnerContainer}>
+                    <span className={styles.rippleSpinner} />
+                    {processingText && (
+                        <span className={styles.procText}>{processingText}</span>
+                    )}
+                </div>
+            )}
+
             <span className={styles.rippleContainer}>
                 {ripples.map((ripple) => (
                     <span
