@@ -54,3 +54,63 @@
     transform: scale(0.95);
     filter: brightness(1.2);
 }
+
+
+
+/* ... existing plasmaBtn, label, etc. ... */
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.forcePlasma {
+    color: #fff !important;
+    box-shadow: 0 0 15px var(--plasma-color), inset 0 0 10px var(--plasma-color);
+    text-shadow: 0 0 10px #fff;
+    background: var(--plasma-color);
+}
+
+.spinnerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.plasmaSpinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    /* The glow that makes it "Plasma" */
+    filter: drop-shadow(0 0 5px #fff);
+    animation: spin 0.7s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+.procText {
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px #fff;
+    animation: plasma-pulse 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes plasma-pulse {
+    0%, 100% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.7; filter: brightness(1.5); }
+}

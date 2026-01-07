@@ -73,3 +73,55 @@
         left: 250%;
     }
 }
+
+
+
+
+/* ... existing shineBtn, label, shineEffect styles ... */
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.spinnerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.shineSpinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.2);
+    border-top: 2.5px solid #ffffff; /* Crisp white for visibility */
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+.procText {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Adjust active state to not fire when processing */
+.shineBtn:disabled {
+    cursor: not-allowed;
+    filter: brightness(0.9);
+}

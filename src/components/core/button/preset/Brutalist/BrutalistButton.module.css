@@ -1,0 +1,56 @@
+.brutalBtn {
+    background: #fff; /* High contrast background */
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 0px; /* Brutalism usually uses sharp corners */
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    /* Hard shadow using the color prop */
+    box-shadow: 5px 5px 0px var(--brutal-color);
+}
+
+.brutalBtn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--brutal-color);
+}
+
+.brutalBtn:active {
+    transform: translate(5px, 5px); /* Move exactly by the shadow amount */
+    box-shadow: 0px 0px 0px var(--brutal-color);
+}
+
+/* --- Processing State --- */
+
+.brutalSpinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #000;
+    border-top: 3px solid var(--brutal-color);
+    animation: brutal-spin 0.4s steps(4) infinite; /* Choppy digital spin */
+}
+
+.procText {
+    font-weight: 900;
+    color: #000;
+}
+
+@keyframes brutal-spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinnerContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
