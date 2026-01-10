@@ -1,0 +1,124 @@
+/* Container provides the 3D space */
+.bookContainer {
+    perspective: 1500px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle lift on hover when closed */
+.bookContainer:hover:not(.isOpen) {
+    transform: translateY(-5px);
+}
+
+.bookInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.15, 0.05, 0.2, 1);
+}
+
+/* Moving Front Cover */
+.cover {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.15, 0.05, 0.2, 1), box-shadow 0.6s;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Clips the glare */
+}
+
+/* Static Internal Page */
+.innerPage {
+    position: absolute;
+    width: 97%;
+    height: 96%;
+    top: 2%;
+    left: 1.5%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 
+        inset 10px 0 20px rgba(0, 0, 0, 0.1),
+        3px 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Simulation of stacked paper edges */
+.pageEdges {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background-size: 100% 3px;
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.05) 1px, 
+        transparent 1px
+    );
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Open State Animation */
+.isOpen .cover {
+    transform: rotateY(-145deg); /* Slightly more open for better visibility */
+    box-shadow: 20px 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* The vertical "crease" near the spine */
+.spineShadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.1) 15%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Glassy Glare on the cover */
+.cover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(255, 255, 255, 0.05) 30%,
+        transparent 35%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.bookContainer:hover .cover::after {
+    transform: translateX(0%);
+}
+
+.content, .coverContent {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+

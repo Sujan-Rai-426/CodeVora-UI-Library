@@ -1,0 +1,54 @@
+.flipContainer {
+    perspective: 1200px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flipContainer:hover .flipper,
+.flipContainer.clicked .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Crucial so padding doesn't break 100% width */
+}
+
+.front {
+    position: relative; /* Keeps the container expanded */
+    z-index: 2;
+    background: #ffffff; /* Default background if none passed */
+    border: 1px solid #e2e8f0;
+}
+
+.back {
+    position: absolute; /* Overlays the front */
+    top: 0;
+    left: 0;
+    background: #0f172a; /* Default background if none passed */
+    transform: rotateY(180deg);
+}
+
+.defaultCard {
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
